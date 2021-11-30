@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Angular Elements - Leighton Quotes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          var el = document.querySelector('leighton-quotes');
+          el.addEventListener('newQuote', (event) => console.log(event.detail));
+        }, false);
+    </script>
+</head>
+
+<body>
+    <leighton-quotes>Get a quote</leighton-quotes>
+    <script src="leighton-quotes.js"></script>
+</body>
+
+</html>
