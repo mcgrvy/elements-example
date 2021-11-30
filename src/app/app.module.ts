@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { LButtonComponent } from './l-button/l-button.component';
+import { LQuotesComponent } from './l-quotes/l-quotes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LButtonComponent
+    LQuotesComponent
   ],
   imports: [
     BrowserModule,
