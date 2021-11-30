@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <l-button>Inspire Me!</l-button>
+  `
 })
 export class AppComponent {
   title = 'elements-example';
