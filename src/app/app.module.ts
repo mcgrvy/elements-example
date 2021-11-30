@@ -1,20 +1,25 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Injector, NgModule } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { LButtonComponent } from './l-button/l-button.component';
+import { LQuotesComponent } from './l-quotes/l-quotes.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LButtonComponent
-  ],
+  declarations: [LQuotesComponent],
   imports: [
     BrowserModule,
     HttpClientModule
   ],
   providers: [HttpClientModule],
-  bootstrap: [AppComponent]
+  bootstrap: [],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector : Injector) { }
+
+    ngDoBootstrap() {
+        const el = createCustomElement(LQuotesComponent, { injector : this.injector });
+        customElements.define('leighton-quotes', el);
+    }
+}

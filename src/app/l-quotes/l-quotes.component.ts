@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'l-button',
+  selector: 'l-quotes',
   template: `
     <button (click)="getRandomQuote()">
       <ng-content></ng-content>
@@ -17,7 +17,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
     :host {
       display: block;
       padding: 20px;
-      background: #efefef;
+      background: #d3e8f0;
       border-radius: 5px;
       max-width: 800px;
       margin: 0 auto;
@@ -35,7 +35,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
     }
   `]
 })
-export class LButtonComponent implements OnInit {
+export class LQuotesComponent implements OnInit {
 
   @Output() newQuote = new EventEmitter();
 
@@ -60,7 +60,7 @@ export class LButtonComponent implements OnInit {
 
   public getRandomQuote(): void {
     this.quote = this.quotes[this.quotes.length * Math.random() | 0];
-    this.newQuote.emit();
+    this.newQuote.emit(this.quote);
   }
 
 }
